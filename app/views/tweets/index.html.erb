@@ -1,0 +1,20 @@
+<% if flash[:notice] %>
+  <p><%= flash[:notice] %></p>
+<% end %>
+
+<% if flash[:alert] %>
+  <p><%= flash[:alert] %></p>
+<% end %>
+
+<h1>Twitter</h1>
+<% @tweets.each do |tweet| %>
+  <p>
+    <%= tweet.tdate.strftime("%Y-%m-%d %H:%M:%S") if tweet.tdate %><br>
+    <%= tweet.message %><br>
+    <%= link_to '削除', "/tweets/#{tweet.id}", data: { turbo_method: :delete } %>
+    <%= link_to '表示', "/tweets/#{tweet.id}" %>
+    <%= link_to '編集', "/tweets/#{tweet.id}/edit" %>
+  </p>
+  <hr>
+<% end %>
+<%= link_to 'ツイートする', '/tweets/new' %>

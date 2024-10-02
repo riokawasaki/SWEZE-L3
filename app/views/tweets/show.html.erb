@@ -1,0 +1,6 @@
+<p>
+  <strong>ツイート内容：</strong><br>
+  <%= time_ago_in_minutes(@tweet.tdate) %><br>
+  <%= @tweet.message %><br>
+</p>
+<%= link_to 'Back', '/' %>
