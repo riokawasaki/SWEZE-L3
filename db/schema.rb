@@ -14,6 +14,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_09_18_082046) do
   create_table "tweets", force: :cascade do |t|
     t.string "message"
     t.datetime "tdate"
+    t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
